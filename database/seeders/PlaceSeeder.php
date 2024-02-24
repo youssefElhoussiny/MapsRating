@@ -18,7 +18,7 @@ class PlaceSeeder extends Seeder
         $place = new Place();
         $place->name = "سوق مكة";
         $place->slug = "سوق-مكة";
-        $place->image = "1.jpeg";
+        $place->image = "1.png";
         $place->category_id = 3;
         $place->overview = " لا يمكنني تصفح الإنترنت أو توفير روابط مباشرة إلى مقالات أخبارية باللغة العربية. ومع ذلك";
         $place->address = "مختبر التطبيقات الرقمية";
@@ -31,6 +31,7 @@ class PlaceSeeder extends Seeder
         $place = new Place();
         $place->name = "الصيدلية";
         $place->slug = "الصيدلية";
+        $place->image = "2.png";
         $place->category_id = 2;
         $place->overview = " لا يمكنني تصفح الإنترنت أو توفير روابط مباشرة إلى مقالات أخبارية باللغة العربية. ومع ذلك";
         $place->address = "بيئة الاختبار التكنولوجية";
@@ -43,6 +44,7 @@ class PlaceSeeder extends Seeder
         $place = new Place();
         $place->name = "مكتبة";
         $place->slug = "مكتبة";
+        $place->image = "3.png";
         $place->category_id = 6;
         $place->overview = " لا يمكنني تصفح الإنترنت أو توفير روابط مباشرة إلى مقالات أخبارية باللغة العربية. ومع ذلك";
         $place->address = "بيئة  التكنولوجية";
