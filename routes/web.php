@@ -30,4 +30,4 @@ Route::middleware([
 
 Route::get('/{category:slug}',[CategoryController::class , 'show'])->name('category.show');
 Route::get('/' , [PlaceController::class , 'index'])->name('home');
-Route::get('/search' , [SearchController::class , 'autoComplete'])->name('auto-complete');
+Route::get('/search' , [SearchController::class , 'auto-complete'])->name('auto-complete');

@@ -11,7 +11,6 @@ class SearchController extends Controller
     {
         if($request->address)
         {
-            dd($request->address);
             $input = $request->address;
             $data = Place::where('address' , 'like' , "%$input%")->get();
             $output = '<ul class="bg-gray-100 rounded px-6">';
