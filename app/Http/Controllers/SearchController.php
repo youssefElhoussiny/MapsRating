@@ -21,4 +21,10 @@ class SearchController extends Controller
             return $output;
         }
     }
+    public function show(Request $request)
+    {
+        $places = Place::search($request);
+        
+        return view('list',compact('places'));
+    }
 }
