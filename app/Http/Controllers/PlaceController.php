@@ -3,17 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Place;
+use App\Traits\RateableTrait;
 use Illuminate\Http\Request;
 
 class PlaceController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
+    use RateableTrait;
+
     public function index()
     {
         $places = Place::orderBy('view_count')->take(3)->get();
-        return view('welcome' , compact('places'));
+        return view('welcome', compact('places'));
     }
 
     /**
@@ -37,7 +38,15 @@ class PlaceController extends Controller
      */
     public function show(Place $place)
     {
-        //
+        $place = $place::withCount('reviews')->find($place->id);
+        $avg = $this->averageRating($place);
+        $total = $avg['total'];
+        $service_rating = $avg["service_rating"];
+        $quality_rating = $avg['quality_rating'];
+        $cleanliness_rating = $avg['cleanliness_rating'];
+        $pricing_rating = $avg['pricing_rating'];
+
+        return view('details', compact('place' , 'total' , 'service_rating' , 'quality_rating' , 'cleanliness_rating' , 'pricing_rating'));
     }
 
     /**

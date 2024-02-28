@@ -9,7 +9,7 @@
             @foreach ($places as $place)
                 <div class="my-1 px-1 w-full md:w-1/2 lg:px-4 lg:w-1/3 ">
                     <article class="overflow-hidden rounded-lg shadow-lg bg-white">
-                        <a href="">
+                        <a href="{{route('place.show',[$place->id , $place->slug])}}">
                             <img src="{{$place->image}}" alt="Placeholder" class="block h-auto w-full">
                         </a>
                         <header class="item-center justify-between leading-tight p-2 md:p-4">
